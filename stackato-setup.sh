@@ -13,17 +13,17 @@ if ! [ -s $HOME/index.php ]
     git clone https://github.com/drush-ops/drush.git $SAR/drush
     #curl -sfS $DRUSH | tar xzf -
     #mv drush $SAR
-    git clone -v https://github.com/cgchoffman/inama.git
+    git clone -v https://github.com/PeaceGeeks/amani.git
 
     # I broke the symlink when I moved the repo to my machine
-    rm inama/core/profiles/amani
+    rm amani/core/profiles/amani
     # Must run drush within the Core folder
     echo "Migrating drupal core into application root..."
-    mv inama/core/* inama/core/.??* $HOME
+    mv amani/core/* amani/core/.??* $HOME
 
     echo "Link Amani profile to core drupal"
-    mv inama/amani profiles/
-    #ln -s profiles/amani inama/amani
+    mv amani/amani profiles/
+    #ln -s profiles/amani amani/amani
 
     # create folders in the shared filesystem
     mkdir -p $FS/sites
